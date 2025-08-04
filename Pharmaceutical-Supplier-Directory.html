@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Global pharmaceutical supplier directory - Find API, excipients, chemicals, and finished formulation suppliers worldwide">
+    <meta name="keywords" content="pharmaceutical suppliers, API manufacturers, excipients, chemicals, reference standards, pharma directory">
+    <title>Global Pharma Suppliers | Find Pharmaceutical Material Suppliers Worldwide</title>
+    
+    <!-- Google AdSense (replace with your actual publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: white;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            background-image: url('https://images.unsplash.com/photo-1581093450021-4a7360e9a7d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(44, 62, 80, 0.85);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .search-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            color: white;
+        }
+        
+        .category-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .supplier-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .supplier-card:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .ad-space {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .search-card {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-pills me-2"></i>PharmaSuppliers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suppliers.html">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-accent btn-sm" href="register.html">Register Your Company</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Global Pharmaceutical Supplier Directory</h1>
+                    <p class="lead mb-4">Find trusted suppliers of APIs, excipients, chemicals, and finished formulations from around the world.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#search" class="btn btn-primary btn-lg px-4">Search Suppliers</a>
+                        <a href="register.html" class="btn btn-outline-light btn-lg px-4">List Your Company</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <div class="container" id="search">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="search-card">
+                    <h2 class="h4 mb-4 text-center">Find Pharmaceutical Suppliers</h2>
+                    <form id="supplierSearchForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="category" class="form-label">Material Category</label>
+                                <select class="form-select" id="category">
+                                    <option value="" selected>All Categories</option>
+                                    <option value="api">Active Pharmaceutical Ingredients (APIs)</option>
+                                    <option value="excipients">Excipients</option>
+                                    <option value="chemicals">Chemicals</option>
+                                    <option value="consumables">Consumables</option>
+                                    <option value="standards">Reference Standards</option>
+                                    <option value="formulations">Finished Formulations</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="region" class="form-label">Region</label>
+                                <select class="form-select" id="region">
+                                    <option value="" selected>All Regions</option>
+                                    <option value="north-america">North America</option>
+                                    <option value="europe">Europe</option>
+                                    <option value="asia">Asia</option>
+                                    <option value="middle-east">Middle East</option>
+                                    <option value="latin-america">Latin America</option>
+                                    <option value="africa">Africa</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" disabled>
+                                    <option value="" selected>Select Country</option>
+                                    <!-- Countries will be loaded dynamically based on region selection -->
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="searchTerm" class="form-label">Search by Name or Product</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="searchTerm" placeholder="e.g., Paracetamol, Microcrystalline Cellulose">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fas fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space -->
+    <div class="container mt-4">
+        <div class="ad-space">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_UNIT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Browse by Category</h2>
+            <p class="text-muted">Explore pharmaceutical suppliers by material type</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h5 class="card-title">Active Pharmaceutical Ingredients</h5>
+                        <p class="card-text text-muted">Find suppliers of high-quality APIs for your formulations.</p>
+                        <a href="category.html?type=api" class="btn btn-outline-primary">Browse APIs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h5 class="card-title">Excipients</h5>
+                        <p class="card-text text-muted">Discover suppliers of pharmaceutical-grade excipients.</p>
+                        <a href="category.html?type=excipients" class="btn btn-outline-primary">Browse Excipients</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h5 class="card-title">Chemicals & Reagents</h5>
+                        <p class="card-text text-muted">Source laboratory chemicals and reagents from global suppliers.</p>
+                        <a href="category.html?type=chemicals" class="btn btn-outline-primary">Browse Chemicals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h5 class="card-title">Consumables</h5>
+                        <p class="card-text text-muted">Find suppliers of lab consumables and packaging materials.</p>
+                        <a href="category.html?type=consumables" class="btn btn-outline-primary">Browse Consumables</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h5 class="card-title">Reference Standards</h5>
+                        <p class="card-text text-muted">Source certified reference standards for quality control.</p>
+                        <a href="category.html?type=standards" class="btn btn-outline-primary">Browse Standards</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card card">
+                    <div class="card-body text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-capsules"></i>
+                        </div>
+                        <h5 class="card-title">Finished Formulations</h5>
+                        <p class="card-text text-muted">Find manufacturers of finished dosage forms.</p>
+                        <a href="category.html?type=formulations" class="btn btn-outline-primary">Browse Formulations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Suppliers -->
+    <section class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Featured Suppliers</h2>
+            <p class="text-muted">Trusted pharmaceutical suppliers from around the world</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="supplier-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://via.placeholder.com/50" alt="Supplier Logo" class="rounded-circle me-3">
+                        <div>
+                            <h5 class="mb-0">PharmaChem Solutions</h5>
+                            <span class="text-muted small">United States</span>
+                        </div>
+                    </div>
+                    <p class="mb-2"><strong>Specialties:</strong> APIs, Intermediates</p>
+                    <p class="mb-3"><strong>Certifications:</strong> US FDA, EDQM, WHO GMP</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="supplier-detail.html" class="btn btn-sm btn-outline-primary">View Profile</a>
+                        <a href="contact-supplier.html" class="btn btn-sm btn-primary">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="supplier-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://via.placeholder.com/50" alt="Supplier Logo" class="rounded-circle me-3">
+                        <div>
+                            <h5 class="mb-0">Excipient World</h5>
+                            <span class="text-muted small">Germany</span>
+                        </div>
+                    </div>
+                    <p class="mb-2"><strong>Specialties:</strong> Excipients, Binders, Disintegrants</p>
+                    <p class="mb-3"><strong>Certifications:</strong> EU GMP, IPEC</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="supplier-detail.html" class="btn btn-sm btn-outline-primary">View Profile</a>
+                        <a href="contact-supplier.html" class="btn btn-sm btn-primary">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="supplier-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://via.placeholder.com/50" alt="Supplier Logo" class="rounded-circle me-3">
+                        <div>
+                            <h5 class="mb-0">Asian Pharma Ltd.</h5>
+                            <span class="text-muted small">India</span>
+                        </div>
+                    </div>
+                    <p class="mb-2"><strong>Specialties:</strong> Finished Formulations, Generics</p>
+                    <p class="mb-3"><strong>Certifications:</strong> WHO GMP, ISO 9001</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="supplier-detail.html" class="btn btn-sm btn-outline-primary">View Profile</a>
+                        <a href="contact-supplier.html" class="btn btn-sm btn-primary">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="suppliers.html" class="btn btn-primary">View All Suppliers</a>
+        </div>
+    </section>
+
+    <!-- Ad Space -->
+    <div class="container my-4">
+        <div class="ad-space">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_UNIT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Regions Section -->
+    <section class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Browse by Region</h2>
+            <p class="text-muted">Find pharmaceutical suppliers in specific geographic regions</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80" class="card-img-top" alt="North America">
+                    <div class="card-body">
+                        <h5 class="card-title">North America</h5>
+                        <p class="card-text">Leading pharmaceutical suppliers from the USA, Canada, and Mexico.</p>
+                        <a href="region.html?region=north-america" class="btn btn-outline-primary">Browse Suppliers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Europe">
+                    <div class="card-body">
+                        <h5 class="card-title">Europe</h5>
+                        <p class="card-text">Established pharmaceutical manufacturers across the EU and UK.</p>
+                        <a href="region.html?region=europe" class="btn btn-outline-primary">Browse Suppliers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top" alt="Asia">
+                    <div class="card-body">
+                        <h5 class="card-title">Asia</h5>
+                        <p class="card-text">Major API and formulation suppliers from India, China, and Southeast Asia.</p>
+                        <a href="region.html?region=asia" class="btn btn-outline-primary">Browse Suppliers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-light py-5 my-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Are You a Pharmaceutical Supplier?</h2>
+            <p class="lead mb-4">Join our global directory and connect with buyers from around the world.</p>
+            <a href="register.html" class="btn btn-primary btn-lg px-4">Register Your Company</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">PharmaSuppliers</h5>
+                    <p>The global directory for pharmaceutical material suppliers, connecting buyers with quality suppliers worldwide.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="suppliers.html">Suppliers</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="regions.html">Regions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Supplier Resources</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="register.html">Register Your Company</a></li>
+                        <li><a href="pricing.html">Membership Plans</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Industry News</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-uppercase mb-4">Newsletter</h5>
+                    <p>Subscribe to receive updates on new suppliers and industry trends.</p>
+                    <form class="mt-4">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; 2023 PharmaSuppliers. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small">Designed with <i class="fas fa-heart text-danger"></i> for the pharmaceutical industry</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Country data by region
+        const countriesByRegion = {
+            'north-america': ['United States', 'Canada', 'Mexico'],
+            'europe': ['Germany', 'France', 'Italy', 'United Kingdom', 'Spain', 'Switzerland', 'Netherlands', 'Belgium', 'Sweden', 'Denmark'],
+            'asia': ['India', 'China', 'Japan', 'South Korea', 'Singapore', 'Malaysia', 'Thailand', 'Vietnam', 'Philippines', 'Indonesia'],
+            'middle-east': ['United Arab Emirates', 'Saudi Arabia', 'Israel', 'Turkey', 'Iran', 'Qatar', 'Kuwait'],
+            'latin-america': ['Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru', 'Venezuela'],
+            'africa': ['South Africa', 'Egypt', 'Nigeria', 'Kenya', 'Morocco', 'Algeria']
+        };
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Region change handler
+            const regionSelect = document.getElementById('region');
+            const countrySelect = document.getElementById('country');
+            
+            regionSelect.addEventListener('change', function() {
+                const selectedRegion = this.value;
+                
+                // Clear and disable country select if no region selected
+                if (!selectedRegion) {
+                    countrySelect.innerHTML = '<option value="" selected>Select Country</option>';
+                    countrySelect.disabled = true;
+                    return;
+                }
+                
+                // Enable and populate country select
+                countrySelect.disabled = false;
+                countrySelect.innerHTML = '<option value="" selected>All Countries</option>';
+                
+                // Add countries for selected region
+                countriesByRegion[selectedRegion].forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.toLowerCase().replace(' ', '-');
+                    option.textContent = country;
+                    countrySelect.appendChild(option);
+                });
+            });
+            
+            // Form submission handler
+            const searchForm = document.getElementById('supplierSearchForm');
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const category = document.getElementById('category').value;
+                const region = document.getElementById('region').value;
+                const country = document.getElementById('country').value;
+                const searchTerm = document.getElementById('searchTerm').value;
+                
+                // In a real application, this would make an API call or redirect to search results
+                console.log('Search parameters:', {
+                    category,
+                    region,
+                    country,
+                    searchTerm
+                });
+                
+                alert('In a real implementation, this would redirect to search results. See console for search parameters.');
+            });
+        });
+    </script>
+</body>
+</html>
